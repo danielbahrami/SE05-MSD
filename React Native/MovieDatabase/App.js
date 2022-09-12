@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Text>App</Text>
+      <Header></Header>
     </View>
   );
 };
