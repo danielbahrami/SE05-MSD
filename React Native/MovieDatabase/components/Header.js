@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
     fontFamily: "Arial",
     fontSize: 40,
     fontWeight: "bold",
-    marginTop: 60,
-    marginLeft: 130,
   },
 });
 
