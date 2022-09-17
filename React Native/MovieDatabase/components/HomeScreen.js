@@ -5,7 +5,7 @@ import Header from "./Header";
 const HomeScreen = () => {
   return (
     <View>
-        <Header title={"Movies"}></Header>
+      <Header title={"Movies"}></Header>
       <Text>HomeScreen</Text>
     </View>
   );
