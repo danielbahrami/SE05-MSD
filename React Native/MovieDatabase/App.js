@@ -11,7 +11,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="Movies" component={HomeScreen} />
         <Stack.Screen name="MovieScreen" component={MovieScreen} />
       </Stack.Navigator>
     </NavigationContainer>
