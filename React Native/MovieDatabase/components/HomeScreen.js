@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
 
   function fetchMovies() {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => setData(data.results));
