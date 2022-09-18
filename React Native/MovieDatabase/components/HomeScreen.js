@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
-import Header from "./Header";
 
 const HomeScreen = ({ navigation }) => {
   const [data, setData] = useState([]);
