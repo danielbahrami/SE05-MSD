@@ -6,6 +6,7 @@ const HomeScreen = ({ navigation }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log("Fetching movies with API key: " + process.env.API_KEY);
     fetchMovies();
   }, []);
 
