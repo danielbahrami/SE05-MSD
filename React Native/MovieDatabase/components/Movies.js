@@ -22,7 +22,7 @@ const Movies = ({ navigation }) => {
     <View>
       <Text
         onPress={() =>
-          navigation.navigate("Details", {
+          navigation.navigate("Movie Details", {
             movieId,
           })
         }
