@@ -4,12 +4,11 @@ import HomeScreen from "./components/HomeScreen";
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <HomeScreen></HomeScreen>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
 
 export default App;
