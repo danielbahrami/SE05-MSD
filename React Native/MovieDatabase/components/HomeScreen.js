@@ -1,12 +1,35 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { useEffect, useState } from "react";
+import { View, StyleSheet, FlatList } from "react-native";
 import React from "react";
 import Header from "./Header";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  function fetchMovies() {
+    fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=cb3a97ce57284e6fbd4091cbd4ac35b9&language=en-US&page=1`
+    )
+      .then((response) => response.json())
+      .then((data) => setData(data.results));
+  }
+
+  const renderItem = ({ item }) => (
+    <Item navigation={navigation} movieId={item.id} title={item.title} />
+  );
+
   return (
     <View style={styles.container}>
-      <Header title={"Movies"}></Header>
-      <Text>HomeScreen</Text>
+      <Header title={"Movies"} size={30} color={"black"}></Header>
+      <FlatList>
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      </FlatList>
     </View>
   );
 };
