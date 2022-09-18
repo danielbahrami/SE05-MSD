@@ -5,13 +5,17 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MovieScreen from "./components/MovieScreen";
 
+const Stack = createStackNavigator();
+
 const App = () => {
   return (
-    <View>
-      <HomeScreen></HomeScreen>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="MovieScreen" component={MovieScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
 
 export default App;
