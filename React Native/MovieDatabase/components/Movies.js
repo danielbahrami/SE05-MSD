@@ -7,7 +7,7 @@ const Movies = ({ navigation }) => {
 
   function fetchMovies() {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
+      `https://api.themoviedb.org/3/movie/popular?api_key=cb3a97ce57284e6fbd4091cbd4ac35b9`
     )
       .then((response) => response.json())
       .then((data) => setData(data.results));
