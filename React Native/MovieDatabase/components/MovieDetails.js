@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const MovieScreen = () => {
+const MovieDetails = () => {
   return (
     <View>
       <Text>MovieScreen</Text>
@@ -9,4 +9,4 @@ const MovieScreen = () => {
   );
 };
 
-export default MovieScreen;
+export default MovieDetails;

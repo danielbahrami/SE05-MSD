@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
 
-const HomeScreen = ({ navigation }) => {
+const Movies = ({ navigation }) => {
   const [data, setData] = useState([]);
 
   function fetchMovies() {
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Movies;
