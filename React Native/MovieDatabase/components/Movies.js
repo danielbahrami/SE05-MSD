@@ -26,7 +26,7 @@ const Movies = ({ navigation }) => {
     fetchMovies();
   }, []);
 
-  const Movie = ({ navigation, title, movieId }) => (
+  const Movie = ({ navigation, movieId, image }) => (
     <View>
       <Text
         onPress={() =>
