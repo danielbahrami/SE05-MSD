@@ -4,12 +4,13 @@ import Movies from "./components/Movies";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MovieDetails from "./components/MovieDetails";
+import darkTheme from "@react-navigation/native/src/theming/DarkTheme";
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={darkTheme}>
       <Stack.Navigator>
         <Stack.Screen name="Movies" component={Movies} />
         <Stack.Screen name="Movie Details" component={MovieDetails} />
