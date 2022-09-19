@@ -53,6 +53,8 @@ const Movies = ({ navigation }) => {
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        horizontal={false}
+        numColumns={2}
       />
     </View>
   );
@@ -61,7 +63,6 @@ const Movies = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    marginTop: 60,
   },
 });
 
