@@ -35,7 +35,6 @@ const Movies = ({ navigation }) => {
           })
         }
       >
-        {title}
       </Text>
     </View>
   );
