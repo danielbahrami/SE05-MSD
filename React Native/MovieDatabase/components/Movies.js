@@ -36,6 +36,10 @@ const Movies = ({ navigation }) => {
         }
       >
       </Text>
+        <Image
+          style={styles.image}
+          source={{ uri: `https://image.tmdb.org/t/p/original${image}` }}
+        ></Image>
     </View>
   );
 
