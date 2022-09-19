@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  FlatList,
+  ImageBackground,
+} from "react-native";
 import React from "react";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 const Movies = ({ navigation }) => {
   const [data, setData] = useState([]);
