@@ -24,7 +24,7 @@ const MovieDetails = ({ route }) => {
       <Image
         style={styles.image}
         source={{
-          uri: `https://image.tmdb.org/t/p/original${data.poster_path}`,
+          uri: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
         }}
       />
       <Text style={styles.title}>{data.title}</Text>
