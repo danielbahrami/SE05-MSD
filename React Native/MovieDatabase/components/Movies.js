@@ -34,7 +34,6 @@ const Movies = ({ navigation }) => {
             movieId,
           })
         }
-        style={styles.title}
       >
         {title}
       </Text>
