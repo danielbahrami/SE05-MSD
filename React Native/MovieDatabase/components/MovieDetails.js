@@ -30,6 +30,7 @@ const MovieDetails = ({ route }) => {
       <Text style={styles.title}>{data.title}</Text>
       <Text>{data.overview}</Text>
       <Text style={styles.release_date}>Release date: {data.release_date}</Text>
+      <Text style={styles.vote_average}>Review score: {data.vote_average}</Text>
     </View>
   );
 };
