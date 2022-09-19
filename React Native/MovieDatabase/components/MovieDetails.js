@@ -20,7 +20,7 @@ const MovieDetails = ({ route }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View>
       <Image
         style={styles.image}
         source={{
@@ -28,7 +28,7 @@ const MovieDetails = ({ route }) => {
         }}
       />
       <Text style={styles.title}>{data.title}</Text>
-      <Text>{data.overview}</Text>
+      <Text style={styles.overview}>{data.overview}</Text>
       <Text style={styles.release_date}>Release date: {data.release_date}</Text>
       <Text style={styles.vote_average}>Review score: {data.vote_average}</Text>
     </View>
@@ -36,17 +36,38 @@ const MovieDetails = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
+  image: {
+    width: "100%",
+    height: 250,
   },
   title: {
-    fontSize: 28,
-    marginBottom: 10,
+    color: "white",
+    fontSize: 20,
+    fontFamily: "Arial-BoldMT",
+    textAlign: "center",
+    marginTop: 25,
   },
-  image: {
-    aspectRatio: 1.5,
-    resizeMode: "contain",
+  overview: {
+    color: "white",
+    fontSize: 15,
+    fontFamily: "Avenir",
+    marginTop: 25,
+    marginLeft: 15,
+    marginRight: 15,
+  },
+  release_date: {
+    color: "white",
+    fontSize: 15,
+    fontFamily: "Arial-BoldMT",
+    marginTop: 25,
+    marginLeft: 15,
+  },
+  vote_average: {
+    color: "white",
+    fontSize: 15,
+    fontFamily: "Arial-BoldMT",
+    marginTop: 25,
+    marginLeft: 15,
   },
 });
 
