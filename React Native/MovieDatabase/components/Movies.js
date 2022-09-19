@@ -28,18 +28,18 @@ const Movies = ({ navigation }) => {
 
   const Movie = ({ navigation, movieId, image }) => (
     <View>
-      <Text
+      <TouchableHighlight
         onPress={() =>
           navigation.navigate("Movie Details", {
             movieId,
           })
         }
       >
-      </Text>
         <Image
           style={styles.image}
           source={{ uri: `https://image.tmdb.org/t/p/original${image}` }}
         ></Image>
+      </TouchableHighlight>
     </View>
   );
 
