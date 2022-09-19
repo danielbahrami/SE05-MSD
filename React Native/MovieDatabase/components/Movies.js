@@ -44,7 +44,7 @@ const Movies = ({ navigation }) => {
   );
 
   const renderItem = ({ item }) => (
-    <Movie navigation={navigation} movieId={item.id} title={item.title} />
+    <Movie navigation={navigation} movieId={item.id} image={item.poster_path} />
   );
 
   return (
