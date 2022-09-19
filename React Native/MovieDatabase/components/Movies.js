@@ -1,13 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  FlatList,
-  ImageBackground,
-} from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FlatList, Image, StyleSheet, View } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
 const Movies = ({ navigation }) => {

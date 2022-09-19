@@ -1,6 +1,5 @@
-import { View, Text, StyleSheet, Image } from "react-native";
-import React from "react";
-import { useEffect, useState } from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
 
 const MovieDetails = ({ route }) => {
   const [data, setData] = useState([]);
