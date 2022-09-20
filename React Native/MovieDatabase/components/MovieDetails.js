@@ -20,7 +20,7 @@ const MovieDetails = ({ route }) => {
   }, []);
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Image
         style={styles.image}
         source={{
@@ -28,9 +28,15 @@ const MovieDetails = ({ route }) => {
         }}
       />
       <Text style={styles.title}>{data.title}</Text>
-      <Text style={styles.overview}>{data.overview}</Text>
-      <Text style={styles.release_date}>Release date: {data.release_date}</Text>
-      <Text style={styles.vote_average}>Review score: {data.vote_average}</Text>
+      <ScrollView style={styles.ScrollView}>
+        <Text style={styles.overview}>{data.overview}</Text>
+        <Text style={styles.release_date}>
+          Release date: {data.release_date}
+        </Text>
+        <Text style={styles.vote_average}>
+          Review score: {data.vote_average}
+        </Text>
+      </ScrollView>
     </View>
   );
 };
