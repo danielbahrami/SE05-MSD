@@ -48,16 +48,20 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: "Arial-BoldMT",
     textAlign: "center",
     marginTop: 25,
+    marginBottom: 25,
+  },
+  ScrollView: {
+    height: "100%",
+    marginBottom: 50,
   },
   overview: {
     color: "white",
-    fontSize: 15,
+    fontSize: 20,
     fontFamily: "Avenir",
-    marginTop: 25,
     marginLeft: 15,
     marginRight: 15,
   },
