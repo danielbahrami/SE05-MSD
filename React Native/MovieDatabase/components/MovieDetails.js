@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
+import { ScrollView } from "react-native-gesture-handler";
 
 const MovieDetails = ({ route }) => {
   const [data, setData] = useState([]);
