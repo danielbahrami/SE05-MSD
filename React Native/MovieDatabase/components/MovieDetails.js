@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
+import { API_KEY } from "@env";
 
 const MovieDetails = ({ route }) => {
   const [data, setData] = useState([]);
@@ -8,9 +9,7 @@ const MovieDetails = ({ route }) => {
   const { movieId } = route.params;
 
   function fetchMovie() {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=cb3a97ce57284e6fbd4091cbd4ac35b9`
-    )
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }

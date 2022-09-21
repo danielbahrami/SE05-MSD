@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, Image, StyleSheet, View } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
+import { API_KEY } from "@env";
 
 const Movies = ({ navigation }) => {
   const [data, setData] = useState([]);
 
   function fetchMovies() {
-    fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=cb3a97ce57284e6fbd4091cbd4ac35b9`
-    )
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => setData(data.results));
   }
