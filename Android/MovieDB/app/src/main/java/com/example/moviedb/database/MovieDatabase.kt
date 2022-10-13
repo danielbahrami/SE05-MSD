@@ -21,6 +21,7 @@ abstract class MovieDatabase : RoomDatabase() {
                         MovieDatabase::class.java,
                         "movies"
                     )
+                        .addCallback(StartingMovies(context))
                         .build()
                 }
             }
