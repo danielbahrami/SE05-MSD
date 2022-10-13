@@ -1,7 +1,9 @@
-package com.example.moviedb.database
+package com.example.moviedb.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.moviedb.database.MovieDatabase
+import com.example.moviedb.database.MovieEntity
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val movieDatabase: MovieDatabase) : ViewModel() {
