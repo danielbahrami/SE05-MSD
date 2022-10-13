@@ -1,21 +1,19 @@
 package com.example.moviedb.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface MovieDao {
-    @Query("SELECT * FROM MovieList")
-    fun getAll(): List<Movie>
-
-    @Query("SELECT * FROM MovieList WHERE :MovieID = id")
-    fun loadByID(MovieID: Int): Movie
-
-    @Insert
-    fun insert(Movie: Movie)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMovie(movieEntity: MovieEntity)
 
     @Delete
-    fun delete(Movie: Movie)
+    suspend fun deleteMovie(movieEntity: MovieEntity)
+
+    @Update
+    suspend fun update(movieEntity: MovieEntity)
+
+    @Query("SELECT * FROM MoviesTable ORDER BY id ASC")
+    fun getAllMovies(): LiveData<List<MovieEntity>>
 }
