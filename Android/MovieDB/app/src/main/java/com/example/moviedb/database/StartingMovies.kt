@@ -24,18 +24,16 @@ class StartingMovies(private val context: Context) : RoomDatabase.Callback() {
 
         try {
             val movies = loadJSONArray(context)
-            if (movies != null) {
-                for (i in 0 until movies.length()) {
-                    val item = movies.getJSONObject(i)
-                    val movieTitle = item.getString("title")
-                    val movieReleaseYear = item.getString("release_year")
-                    val movieDirector = item.getString("director")
+            for (i in 0 until movies.length()) {
+                val item = movies.getJSONObject(i)
+                val movieTitle = item.getString("title")
+                val movieReleaseYear = item.getString("release_year")
+                val movieDirector = item.getString("director")
 
-                    val movieEntity = MovieEntity(
-                        movieTitle, movieReleaseYear, movieDirector
-                    )
-                    dao?.insertMovie(movieEntity)
-                }
+                val movieEntity = MovieEntity(
+                    movieTitle, movieReleaseYear, movieDirector
+                )
+                dao?.insertMovie(movieEntity)
             }
         } catch (e: JSONException) {
             e.printStackTrace()
