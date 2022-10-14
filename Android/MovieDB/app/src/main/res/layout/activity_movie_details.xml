@@ -7,4 +7,17 @@
         android:layout_height="match_parent"
         tools:context=".MovieDetailsActivity">
 
+    <TextView
+            android:text="Movie Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/movieTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="32dp"/>
+    <TextView
+            android:text="Release year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/releaseYear"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="64dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
