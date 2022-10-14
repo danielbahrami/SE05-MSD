@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = layoutManager
         viewModel.movies.observe(this) {
-            Log.d("hej", it.toString())
             recyclerView.adapter = MoviesAdapter(it, this)
         }
     }
