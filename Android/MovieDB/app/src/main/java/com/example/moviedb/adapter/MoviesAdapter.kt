@@ -1,16 +1,18 @@
 package com.example.moviedb.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moviedb.MovieDetailsActivity
 import com.example.moviedb.R
 import com.example.moviedb.database.MovieEntity
 
 
-class MoviesAdapter(private val data: List<MovieEntity>?, private val context: Context) :
+class MoviesAdapter(private val movies: List<MovieEntity>?, private val context: Context) :
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
@@ -23,19 +25,18 @@ class MoviesAdapter(private val data: List<MovieEntity>?, private val context: C
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.movieTitle.text = data?.get(position)?.movieTitle
+        holder.movieTitle.text = movies?.get(position)?.movieTitle
 
-        /*
         holder.movieTitle.setOnClickListener {
             val intent = Intent(context, MovieDetailsActivity::class.java).apply {
-                putExtra("movie", movies[position])
+                putExtra("movie", movies?.get(position))
             }
+            context.startActivity(intent)
         }
-        */
 
     }
 
     override fun getItemCount(): Int {
-        return data?.size ?: 0
+        return movies?.size ?: 0
     }
 }
