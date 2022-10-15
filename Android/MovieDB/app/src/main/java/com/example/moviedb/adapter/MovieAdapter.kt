@@ -11,10 +11,8 @@ import com.example.moviedb.MovieDetailsActivity
 import com.example.moviedb.R
 import com.example.moviedb.database.MovieEntity
 
-
 class MovieAdapter(private val movies: List<MovieEntity>?, private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
-
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val movieTitle: TextView = item.findViewById(R.id.movieTitle)
     }

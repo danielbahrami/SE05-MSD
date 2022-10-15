@@ -12,20 +12,15 @@ import org.json.JSONException
 import java.io.BufferedReader
 
 class StartingMovies(private val context: Context) : RoomDatabase.Callback() {
-
     private fun loadJSONArray(context: Context): JSONArray {
-
         val inputStream = context.resources.openRawResource(R.raw.moviedata)
-
         BufferedReader(inputStream.reader()).use {
             return JSONArray(it.readText())
         }
     }
 
     private suspend fun fillWithStartingMovies(context: Context) {
-
         val dao = MovieDatabase.getInstance(context)?.dao
-
         try {
             val movies = loadJSONArray(context)
             for (i in 0 until movies.length()) {
@@ -33,7 +28,6 @@ class StartingMovies(private val context: Context) : RoomDatabase.Callback() {
                 val movieTitle = item.getString("title")
                 val movieReleaseYear = item.getString("release_year")
                 val movieDirector = item.getString("director")
-
                 val movieEntity = MovieEntity(
                     movieTitle, movieReleaseYear, movieDirector
                 )
@@ -48,5 +42,4 @@ class StartingMovies(private val context: Context) : RoomDatabase.Callback() {
         super.onCreate(db)
         CoroutineScope(Dispatchers.IO).launch { fillWithStartingMovies(context) }
     }
-
 }

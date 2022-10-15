@@ -12,7 +12,6 @@ abstract class MovieDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var instance: MovieDatabase? = null
-
         fun getInstance(context: Context): MovieDatabase? {
             if (instance == null) {
                 synchronized(MovieDatabase::class.java) {

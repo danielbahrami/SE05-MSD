@@ -9,7 +9,6 @@ import com.example.moviedb.database.MovieEntity
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-
     var movies: LiveData<List<MovieEntity>>
 
     init {

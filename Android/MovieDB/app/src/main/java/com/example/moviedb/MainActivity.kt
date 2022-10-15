@@ -9,22 +9,16 @@ import com.example.moviedb.adapter.MovieAdapter
 import com.example.moviedb.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-
-
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-
         recyclerView.layoutManager = layoutManager
         viewModel.movies.observe(this) {
             recyclerView.adapter = MovieAdapter(it, this)
         }
     }
-
 }
