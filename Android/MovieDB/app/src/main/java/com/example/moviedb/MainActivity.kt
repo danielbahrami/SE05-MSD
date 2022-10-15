@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
         viewModel.movies.observe(this) {
             recyclerView.adapter = MovieAdapter(it, this)
