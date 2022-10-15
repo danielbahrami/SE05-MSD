@@ -29,7 +29,7 @@ class MoviesAdapter(private val movies: List<MovieEntity>?, private val context:
 
         holder.movieTitle.setOnClickListener {
             val intent = Intent(context, MovieDetailsActivity::class.java).apply {
-                putExtra("movie", movies?.get(position))
+                putExtra("movies", movies?.get(position))
             }
             context.startActivity(intent)
         }
