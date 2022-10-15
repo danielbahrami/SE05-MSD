@@ -12,8 +12,8 @@ import com.example.moviedb.R
 import com.example.moviedb.database.MovieEntity
 
 
-class MoviesAdapter(private val movies: List<MovieEntity>?, private val context: Context) :
-    RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
+class MovieAdapter(private val movies: List<MovieEntity>?, private val context: Context) :
+    RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val movieTitle: TextView = item.findViewById(R.id.movieTitle)
@@ -26,14 +26,12 @@ class MoviesAdapter(private val movies: List<MovieEntity>?, private val context:
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.movieTitle.text = movies?.get(position)?.movieTitle
-
         holder.movieTitle.setOnClickListener {
             val intent = Intent(context, MovieDetailsActivity::class.java).apply {
                 putExtra("movies", movies?.get(position))
             }
             context.startActivity(intent)
         }
-
     }
 
     override fun getItemCount(): Int {

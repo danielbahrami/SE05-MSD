@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.moviedb.adapter.MoviesAdapter
+import com.example.moviedb.adapter.MovieAdapter
 import com.example.moviedb.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = layoutManager
         viewModel.movies.observe(this) {
-            recyclerView.adapter = MoviesAdapter(it, this)
+            recyclerView.adapter = MovieAdapter(it, this)
         }
     }
 
