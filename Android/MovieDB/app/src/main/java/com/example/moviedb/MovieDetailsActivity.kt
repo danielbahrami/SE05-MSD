@@ -12,7 +12,6 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         val movie = intent.getSerializableExtra("movies") as MovieEntity
 
-
         val movieTitle = findViewById<TextView>(R.id.movieReleaseYear).apply {
             text = movie.movieTitle
         }
@@ -21,6 +20,8 @@ class MovieDetailsActivity : AppCompatActivity() {
             text = movie.movieReleaseYear
         }
 
-
+        val movieDirector = findViewById<TextView>(R.id.movieDirector).apply {
+            text = movie.movieDirector
+        }
     }
 }
