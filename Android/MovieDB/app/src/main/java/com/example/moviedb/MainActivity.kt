@@ -6,13 +6,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.moviedb.adapter.MovieAdapter
-import com.example.moviedb.viewmodel.MainViewModel
+import com.example.moviedb.viewmodel.MovieViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        val viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
