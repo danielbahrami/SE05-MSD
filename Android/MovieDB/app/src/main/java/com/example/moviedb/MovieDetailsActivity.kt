@@ -1,8 +1,8 @@
 package com.example.moviedb
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moviedb.database.MovieEntity
 
 class MovieDetailsActivity : AppCompatActivity() {
