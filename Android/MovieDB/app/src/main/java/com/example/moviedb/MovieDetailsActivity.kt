@@ -10,10 +10,10 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
         val movie = intent.getSerializableExtra("movies") as MovieEntity
-        val movieTitle = findViewById<TextView>(R.id.movieReleaseYear).apply {
+        val movieTitle = findViewById<TextView>(R.id.movieTitle).apply {
             text = movie.movieTitle
         }
-        val movieReleaseYear = findViewById<TextView>(R.id.movieTitle).apply {
+        val movieReleaseYear = findViewById<TextView>(R.id.movieReleaseYear).apply {
             text = movie.movieReleaseYear
         }
         val movieDirector = findViewById<TextView>(R.id.movieDirector).apply {
