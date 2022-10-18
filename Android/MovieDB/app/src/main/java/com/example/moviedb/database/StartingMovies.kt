@@ -34,7 +34,7 @@ class StartingMovies(private val context: Context) : RoomDatabase.Callback() {
                 dao?.insertMovie(movieEntity)
             }
         } catch (e: JSONException) {
-            e.printStackTrace()
+            Log.e(TAG, e)
         }
     }
 
