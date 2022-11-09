@@ -1,9 +1,9 @@
-const CACHE_NAME = "version-1";
+const cacheName = "version-1";
 const urlsToCache = ["index.html", "offline.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(cacheName).then((cache) => {
       console.log("Opened Cache");
       return cache.addAll(urlsToCache);
     })
@@ -20,7 +20,7 @@ self.addEventListener("fetch", (event) => {
 
 self.addEventListener("activate", (event) => {
   const cacheWhitelist = [];
-  cacheWhitelist.push(CACHE_NAME);
+  cacheWhitelist.push(cacheName);
   event.waitUntil(
     caches.keys().then((cacheNames) =>
       Promise.all(
