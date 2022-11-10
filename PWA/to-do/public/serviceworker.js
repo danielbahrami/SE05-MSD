@@ -12,8 +12,12 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(() => {
-      return fetch(event.request).catch(() => caches.match("offline.html"));
+    caches.match(event.request).then(async () => {
+      try {
+        return await fetch(event.request);
+      } catch {
+        return await caches.match("offline.html");
+      }
     })
   );
 });
