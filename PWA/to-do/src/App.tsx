@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Todos } from "./components/Todos";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div className="bg-black h-screen">
+      <Todos />
+    </div>
+  );
+};
 
-export default App
+export default App;
