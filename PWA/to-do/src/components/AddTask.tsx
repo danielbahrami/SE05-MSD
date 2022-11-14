@@ -1,6 +1,6 @@
 import { AddTaskProp } from "../types";
 
-export const AddTodo = ({
+export const AddTask = ({
   handleSubmitTask,
   task,
   handleChange,

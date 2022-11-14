@@ -2,7 +2,7 @@ import React, { FormEvent, ChangeEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { Row } from "./Row";
-import { AddTodo } from "./AddTodo";
+import { AddTask } from "./AddTask";
 import { data } from "../tasks";
 import { Task } from "../types";
 
@@ -56,7 +56,7 @@ export const Todos = () => {
         <div className="flex justify-center">
           <h1 className="text-white text-2xl">To-Do App</h1>
         </div>
-        <AddTodo
+        <AddTask
           handleSubmitTask={handleSubmitTodo}
           handleChange={handleChange}
           task={task}
