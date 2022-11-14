@@ -1,6 +1,6 @@
 import { TaskProp } from "../types";
 
-export const Row = ({
+export const Task = ({
   task: { id, task, isCompleted },
   handleCheckTask,
   handleDeleteTask,

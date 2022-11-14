@@ -1,7 +1,7 @@
 import React, { FormEvent, ChangeEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { Row } from "./Row";
+import { Task } from "./Task";
 import { AddTask } from "./AddTask";
 import { data } from "../tasks";
 import { ToDo } from "../types";
@@ -64,7 +64,7 @@ export const Todos = () => {
         <div className="h-80 overflow-x-hidden overflow-y-auto">
           {todos
             .map((todo) => (
-              <Row
+              <Task
                 key={todo.id}
                 task={todo}
                 handleDeleteTask={handleDeleteTodo}
