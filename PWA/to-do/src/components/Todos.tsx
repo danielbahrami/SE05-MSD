@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { Row } from "./Row";
 import { AddTodo } from "./AddTodo";
-import { data } from "../todos";
+import { data } from "../tasks";
 import { Todo } from "../types";
 
 export const Todos = () => {
