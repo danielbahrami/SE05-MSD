@@ -6,7 +6,7 @@ import { AddTask } from "./AddTask";
 import { data } from "../tasks";
 import { ToDo } from "../types";
 
-export const Todos = () => {
+export const Tasks = () => {
   const [todos, setTodos] = useState<ToDo[]>(data);
   const [task, setTask] = useState<string>("");
 

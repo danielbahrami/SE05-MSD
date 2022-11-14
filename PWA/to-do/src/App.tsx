@@ -1,10 +1,10 @@
 import React from "react";
-import { Todos } from "./components/Todos";
+import { Tasks } from "./components/Tasks";
 
 const App = () => {
   return (
     <div className="bg-black h-screen">
-      <Todos />
+      <Tasks />
     </div>
   );
 };
