@@ -1,19 +1,19 @@
 import { ChangeEvent, FormEvent } from "react";
 
-export type Todo = {
+export type Task = {
   id: string;
   task: string;
   isCompleted: boolean;
 };
 
-export type TodoProps = {
-  todo: Todo;
-  handleCheckTodo: (id: string) => void;
-  handleDeleteTodo: (id: string) => void;
+export type TaskProp = {
+  task: Task;
+  handleCheckTask: (id: string) => void;
+  handleDeleteTask: (id: string) => void;
 };
 
-export type AddTodoProps = {
+export type AddTaskProp = {
   task: string;
-  handleSubmitTodo: (e: FormEvent) => void;
   handleChange: (e: ChangeEvent) => void;
+  handleSubmitTask: (e: FormEvent) => void;
 };

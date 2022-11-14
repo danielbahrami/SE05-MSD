@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 import { Row } from "./Row";
 import { AddTodo } from "./AddTodo";
 import { data } from "../tasks";
-import { Todo } from "../types";
+import { Task } from "../types";
 
 export const Todos = () => {
-  const [todos, setTodos] = useState<Todo[]>(data);
+  const [todos, setTodos] = useState<Task[]>(data);
   const [task, setTask] = useState<string>("");
 
-  const handleAddTodo = (todo: Todo) => {
+  const handleAddTodo = (todo: Task) => {
     const updatedTodos = [...todos, todo];
     setTodos(updatedTodos);
     setTask("");
@@ -57,7 +57,7 @@ export const Todos = () => {
           <h1 className="text-white text-2xl">To-Do App</h1>
         </div>
         <AddTodo
-          handleSubmitTodo={handleSubmitTodo}
+          handleSubmitTask={handleSubmitTodo}
           handleChange={handleChange}
           task={task}
         />
@@ -66,9 +66,9 @@ export const Todos = () => {
             .map((todo) => (
               <Row
                 key={todo.id}
-                todo={todo}
-                handleDeleteTodo={handleDeleteTodo}
-                handleCheckTodo={handleCheckTodo}
+                task={todo}
+                handleDeleteTask={handleDeleteTodo}
+                handleCheckTask={handleCheckTodo}
               />
             ))
             .reverse()}

@@ -1,12 +1,12 @@
-import { AddTodoProps } from "../types";
+import { AddTaskProp } from "../types";
 
 export const AddTodo = ({
-  handleSubmitTodo,
+  handleSubmitTask,
   task,
   handleChange,
-}: AddTodoProps) => {
+}: AddTaskProp) => {
   return (
-    <form onSubmit={handleSubmitTodo} className="flex">
+    <form onSubmit={handleSubmitTask} className="flex">
       <input
         placeholder="New Task"
         className="h-10 px-3 bg-white w-full rounded-tl-lg rounded-bl-lg outline-none"
