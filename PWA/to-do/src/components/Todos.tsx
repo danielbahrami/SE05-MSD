@@ -54,7 +54,7 @@ export const Todos = () => {
     <div className="h-screen flex items-center justify-center">
       <div className="max-w-md w-full p-3 bg-zinc-900 rounded-lg space-y-8">
         <div className="flex justify-center">
-          <h1 className="text-white text-2xl">To Do App</h1>
+          <h1 className="text-white text-2xl">To-Do App</h1>
         </div>
         <AddTodo
           handleSubmitTodo={handleSubmitTodo}
