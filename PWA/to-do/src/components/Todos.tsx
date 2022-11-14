@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 import { Row } from "./Row";
 import { AddTask } from "./AddTask";
 import { data } from "../tasks";
-import { Task } from "../types";
+import { ToDo } from "../types";
 
 export const Todos = () => {
-  const [todos, setTodos] = useState<Task[]>(data);
+  const [todos, setTodos] = useState<ToDo[]>(data);
   const [task, setTask] = useState<string>("");
 
-  const handleAddTodo = (todo: Task) => {
+  const handleAddTodo = (todo: ToDo) => {
     const updatedTodos = [...todos, todo];
     setTodos(updatedTodos);
     setTask("");

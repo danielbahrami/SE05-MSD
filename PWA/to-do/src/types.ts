@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent } from "react";
 
-export type Task = {
+export type ToDo = {
   id: string;
   task: string;
   isCompleted: boolean;
 };
 
 export type TaskProp = {
-  task: Task;
+  task: ToDo;
   handleCheckTask: (id: string) => void;
   handleDeleteTask: (id: string) => void;
 };
