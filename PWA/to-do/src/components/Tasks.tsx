@@ -7,7 +7,7 @@ import { data } from "../tasks";
 import { ToDo } from "../types";
 
 const Tasks = () => {
-  const [todos, setTodos] = useState<ToDo[]>(data);
+  const [todos, setTodos] = useState<ToDo[]>(loadFromLocalStorage() ?? data);
   const [task, setTask] = useState<string>("");
 
   const handleAddTodo = (todo: ToDo) => {
