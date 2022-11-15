@@ -1,12 +1,12 @@
 import React, { FormEvent, ChangeEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { Task } from "./Task";
-import { AddTask } from "./AddTask";
+import Task from "./Task";
+import AddTask from "./AddTask";
 import { data } from "../tasks";
 import { ToDo } from "../types";
 
-export const Tasks = () => {
+const Tasks = () => {
   const [todos, setTodos] = useState<ToDo[]>(data);
   const [task, setTask] = useState<string>("");
 
@@ -77,3 +77,5 @@ export const Tasks = () => {
     </div>
   );
 };
+
+export default Tasks;

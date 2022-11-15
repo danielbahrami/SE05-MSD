@@ -1,10 +1,6 @@
 import { AddTaskProp } from "../types";
 
-export const AddTask = ({
-  handleSubmitTask,
-  task,
-  handleChange,
-}: AddTaskProp) => {
+const AddTask = ({ handleSubmitTask, task, handleChange }: AddTaskProp) => {
   return (
     <form onSubmit={handleSubmitTask} className="flex">
       <input
@@ -22,3 +18,5 @@ export const AddTask = ({
     </form>
   );
 };
+
+export default AddTask;

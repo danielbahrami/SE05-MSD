@@ -1,6 +1,6 @@
 import { TaskProp } from "../types";
 
-export const Task = ({
+const Task = ({
   task: { id, task, isCompleted },
   handleCheckTask,
   handleDeleteTask,
@@ -27,3 +27,5 @@ export const Task = ({
     </div>
   );
 };
+
+export default Task;
