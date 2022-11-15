@@ -14,6 +14,7 @@ const Tasks = () => {
     const updatedTodos = [...todos, todo];
     setTodos(updatedTodos);
     setTask("");
+    saveToLocalStorage(updatedTodos);
   };
 
   const handleSubmitTodo = (e: FormEvent) => {
@@ -30,6 +31,7 @@ const Tasks = () => {
   const handleChange = (e: ChangeEvent) => {
     const { value } = e.target as HTMLInputElement;
     setTask(value);
+    saveToLocalStorage(todos);
   };
 
   const handleCheckTodo = (id: string) => {
@@ -43,11 +45,13 @@ const Tasks = () => {
       return todo;
     });
     setTodos(updatedTodos);
+    saveToLocalStorage(updatedTodos);
   };
 
   const handleDeleteTodo = (id: string) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+    saveToLocalStorage(updatedTodos);
   };
 
   function saveToLocalStorage(state: ToDo[]) {
