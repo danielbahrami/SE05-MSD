@@ -58,6 +58,22 @@ const Tasks = () => {
       console.log(e);
     }
   }
+
+  function loadFromLocalStorage() {
+    try {
+      const serializedState = localStorage.getItem("state");
+      if (serializedState === null) {
+        return undefined;
+      }
+      return JSON.parse(serializedState);
+    } catch (e) {
+      console.log(e);
+      {
+        return undefined;
+      }
+    }
+  }
+
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="max-w-md w-full p-3 bg-zinc-900 rounded-lg space-y-8">
