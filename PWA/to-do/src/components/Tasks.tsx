@@ -68,9 +68,7 @@ const Tasks = () => {
       return JSON.parse(serializedState);
     } catch (e) {
       console.log(e);
-      {
-        return undefined;
-      }
+      return undefined;
     }
   }
 
