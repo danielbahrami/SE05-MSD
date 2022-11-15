@@ -50,6 +50,14 @@ const Tasks = () => {
     setTodos(updatedTodos);
   };
 
+  function saveToLocalStorage(state: ToDo[]) {
+    try {
+      const serializedState = JSON.stringify(state);
+      localStorage.setItem("state", serializedState);
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="max-w-md w-full p-3 bg-zinc-900 rounded-lg space-y-8">
