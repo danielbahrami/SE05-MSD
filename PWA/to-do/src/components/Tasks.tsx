@@ -7,51 +7,50 @@ import { data } from "../tasks";
 import { ToDo } from "../types";
 
 const Tasks = () => {
-  const [todos, setTodos] = useState<ToDo[]>(loadFromLocalStorage() ?? data);
+  const [tasks, setTasks] = useState<ToDo[]>(loadFromLocalStorage() ?? data);
   const [task, setTask] = useState<string>("");
 
-  const handleAddTodo = (todo: ToDo) => {
-    const updatedTodos = [...todos, todo];
-    setTodos(updatedTodos);
+  const handleAddTask = (task: ToDo) => {
+    const updatedTasks = [...tasks, task];
+    setTasks(updatedTasks);
     setTask("");
-    saveToLocalStorage(updatedTodos);
+    saveToLocalStorage(updatedTasks);
   };
 
-  const handleSubmitTodo = (e: FormEvent) => {
+  const handleSubmitTask = (e: FormEvent) => {
     e.preventDefault();
-
     const todo = {
       id: uuidv4(),
       task: task,
       isCompleted: false,
     };
-    task && handleAddTodo(todo);
+    task && handleAddTask(todo);
   };
 
   const handleChange = (e: ChangeEvent) => {
     const { value } = e.target as HTMLInputElement;
     setTask(value);
-    saveToLocalStorage(todos);
+    saveToLocalStorage(tasks);
   };
 
-  const handleCheckTodo = (id: string) => {
-    const updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
+  const handleCheckTask = (id: string) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
         return {
-          ...todo,
-          isCompleted: !todo.isCompleted,
+          ...task,
+          isCompleted: !task.isCompleted,
         };
       }
-      return todo;
+      return task;
     });
-    setTodos(updatedTodos);
-    saveToLocalStorage(updatedTodos);
+    setTasks(updatedTasks);
+    saveToLocalStorage(updatedTasks);
   };
 
-  const handleDeleteTodo = (id: string) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
-    saveToLocalStorage(updatedTodos);
+  const handleDeleteTask = (id: string) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
+    saveToLocalStorage(updatedTasks);
   };
 
   function saveToLocalStorage(state: ToDo[]) {
@@ -83,18 +82,18 @@ const Tasks = () => {
           <h1 className="text-white text-2xl">To-Do App</h1>
         </div>
         <AddTask
-          handleSubmitTask={handleSubmitTodo}
+          handleSubmitTask={handleSubmitTask}
           handleChange={handleChange}
           task={task}
         />
         <div className="h-80 overflow-x-hidden overflow-y-auto">
-          {todos
-            .map((todo) => (
+          {tasks
+            .map((task) => (
               <Task
-                key={todo.id}
-                task={todo}
-                handleDeleteTask={handleDeleteTodo}
-                handleCheckTask={handleCheckTodo}
+                key={task.id}
+                task={task}
+                handleDeleteTask={handleDeleteTask}
+                handleCheckTask={handleCheckTask}
               />
             ))
             .reverse()}
