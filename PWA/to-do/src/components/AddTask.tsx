@@ -6,9 +6,7 @@ const AddTask = ({ handleSubmitTask, task, handleChange }: AddTaskProp) => {
       <input
         placeholder="New Task"
         className="h-10 px-3 bg-white w-full rounded-tl-lg rounded-bl-lg outline-none"
-        id="add-todo"
         type="text"
-        name="task"
         value={task}
         onChange={handleChange}
       />

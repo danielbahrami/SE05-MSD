@@ -1,7 +1,7 @@
 import { TaskProp } from "../types";
 
 const Task = ({
-  task: { id, task, isCompleted },
+  task: { id, isCompleted, task },
   handleCheckTask,
   handleDeleteTask,
 }: TaskProp) => {
@@ -9,8 +9,8 @@ const Task = ({
     <div className="rounded-lg p-3 mt-4 bg-white flex justify-between">
       <div className="flex items-center">
         <input
-          id={"task-name-" + id}
           type="checkbox"
+          id={id}
           checked={isCompleted}
           onChange={() => handleCheckTask(id)}
         />
