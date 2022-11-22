@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/task_controller.dart';
-import 'package:to_do/task_provider.dart';
+import 'task_controller.dart';
+import 'task_provider.dart';
 
 class TaskView extends StatefulWidget {
   const TaskView({super.key});

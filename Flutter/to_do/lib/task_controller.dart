@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/task_provider.dart';
+import 'task_provider.dart';
 
 class TaskController extends StatelessWidget {
   const TaskController({super.key});

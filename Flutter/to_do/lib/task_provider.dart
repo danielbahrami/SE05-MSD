@@ -1,6 +1,6 @@
-import 'dart:collection';
 import 'package:flutter/material.dart';
-import 'package:to_do/task_model.dart';
+import 'dart:collection';
+import 'task_model.dart';
 
 class TaskProvider with ChangeNotifier {
   List<TaskModel> tasks = [];
